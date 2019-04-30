@@ -20,8 +20,9 @@ npm install --global @vue/cli
 ```
 
 **Question :** Rappelez ce qu'est npm et pourquoi nous utilisons l'option `--global` ?
-
+ 
 **Votre réponse :**
+1-Node package manager, c'est un framework constitué d'un biblioteque basé sur javascript, l'option global permet d'installer vue sur la totalité du disque dur .
 
 Vérfier que la version de Vue CLI installée est au moins la version 3 :
 
@@ -42,13 +43,14 @@ Si des questions vous sont posées, choisissez les options par défaut.
 **Question :** Quels sont les bons réflexes à avoir quand vous téléchargez un nouveau projet ? Quels fichiers regarder en priorité ?
 
 **Votre réponse :**
+2-Le readme
 
 Avant même de commencer à lancer l'application et sans regarder le code vous pouvez apprendre plein de choses. Prenez cette habitude.
 
 **Question :** Regardez le fichier `README.md`, quelle est la commande que nous allons utiliser pour travailler le projet ?
 
 **Votre réponse :**
-
+ 3-npm install
 - Lancez le projet.
 
 ### 2) Écran d'accueil.
