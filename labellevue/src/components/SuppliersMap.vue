@@ -1,1 +1,6 @@
-<h1>Crate des fournisseurs</h1>
+
+<template>
+  <div >
+   <h1>Crate des fournisseurs</h1>
+  </div>
+</template>

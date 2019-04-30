@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Bienvenue sur SpirulineShop"/>
     <Map></Map>
+    <List></List>
     <button v-on:click="onSuppliersListClick()">suppliers</button>
     <button v-on:click="onMapClick()">map</button>
   </div>
