@@ -1,6 +1,7 @@
 
 <template>
   <div >
-    <h1>Lste des fournisseurs</h1>
+    <h1>Liste des fournisseurs</h1>
   </div>
 </template>
+

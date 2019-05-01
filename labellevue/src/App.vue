@@ -1,42 +1,32 @@
 <template>
-  <div id="appcss" >
+  <div id="appcss">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Bienvenue sur SpirulineShop"/>
-    <Map></Map>
-    <List></List>
-    <button v-on:click="onSuppliersListClick()">suppliers</button>
-    <button v-on:click="onMapClick()">map</button>
+    <Home msg="Bienvenue sur SpirulineShop"/>
+
+    <router-link to="/suppliers">
+      <button v-on:click="onSuppliersListClick()">suppliers</button>
+    </router-link>
+    <router-link to="/map">
+      <button v-on:click="onMapClick()">map</button>
+    </router-link>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Map from './components/SuppliersMap.vue'
-import List from './components/SuppliersList.vue'
+import Home from "./components/Home.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld,
-    Map,
-    List,
-  },
-    methods: {
-    onSuppliersListClick: function() {
-      alert("hello");
-    },
-    onMapClick: function() {
-      alert("salut");
-    }
+    Home
   }
-  
-}
-
+};
 </script>
 
 <style>
 #appcss {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
