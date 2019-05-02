@@ -16,7 +16,6 @@
 import Supplier from "./Supplier.vue";
 export default {
 components: {Supplier},
-
 data() {
   return {
     suppliers: [

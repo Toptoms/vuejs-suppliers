@@ -20,6 +20,7 @@ Vue.use(VueGoogleMaps, {
     key: 'AIzaSyDf43lPdwlF98RCBsJOFNKOkoEjkwxb5Sc',
   }
 })
+
 new Vue({
   router,
   render: h => h(App)
