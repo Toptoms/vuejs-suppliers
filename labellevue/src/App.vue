@@ -1,21 +1,15 @@
 <template>
   <div id="appcss">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="./assets/vert.jpg">
     <Home msg="Bienvenue sur SpirulineShop"/>
-
-    <router-link to="/suppliers">
-      <button v-on:click="onSuppliersListClick()">suppliers</button>
-    </router-link>
-    <router-link to="/map">
-      <button v-on:click="onMapClick()">map</button>
-    </router-link>
+    <router-link to="/suppliers" class="btn btn-success mr-2">Liste des fournisseurs</router-link>
+    <router-link to="/map" class="btn btn-success mr-2">Carte des fournisseurs</router-link>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Home from "./components/Home.vue";
-
 export default {
   name: "app",
   components: {
