@@ -7,7 +7,7 @@
         <GmapMarker
           v-for="(m, index) in markers"
           :key="index"
-          :position="{lat:m.latitude, lng:m.longitude}"
+          :position="{lat:parseFloat(m.latitude), lng:parseFloat(m.longitude)}"
           @click="true "
         />
       </gmap-map>
@@ -16,23 +16,22 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  name: "suppliersmap",
-  data() {
+  data: function() {
     return {
-      markers: [
-        {
-          id: 1,
-          latitude: 45.859779,
-          longitude: 6.195746
-        },
-        {
-          id: 2,
-          latitude: 45.866360,
-          longitude: 6.139886
-        }
-      ]
+      markers: [], // au début la liste des fournisseurs est vide
+      loading: false,
+      error: null
     };
+  },
+  mounted() {
+    axios
+      .get("https://api-suppliers.herokuapp.com/api/suppliers")
+      .then(response => {
+        this.markers = response.data;
+      })
+      .catch(error => console.log(error));
   }
 };
 </script>
