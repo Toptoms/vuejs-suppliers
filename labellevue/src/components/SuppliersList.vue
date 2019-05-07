@@ -2,6 +2,12 @@
 <template>
   <div>
     <h1>Liste des fournisseurs</h1>
+    <section v-if="errored">
+      <p>Nous sommes désolés, nous ne sommes pas en mesure de récupérer ces informations pour le moment. Veuillez réessayer ultérieurement.</p>
+    </section>
+    <section v-else>
+      <div v-if="loading">Chargement...</div>
+    </section>
     <Supplier
       v-for="supplier in suppliers"
       :key="supplier.id"
@@ -15,22 +21,13 @@
 <script>
 import axios from "axios";
 import Supplier from "./Supplier.vue";
+import Vuex from "vuex";
 export default {
   components: { Supplier },
-  data: function() {
-    return {
-      suppliers: [], // au début la liste des fournisseurs est vide
-      loading: false,
-      error: null
-    };
-  },
+
+  computed: Vuex.mapState(["suppliers", "loading", 'errored']),
   mounted() {
-    axios
-      .get("https://api-suppliers.herokuapp.com/api/suppliers")
-      .then(response => {
-        this.suppliers = response.data;
-      })
-      .catch(error => console.log(error));
+    this.$store.dispatch("loadData");
   }
 };
 </script>
